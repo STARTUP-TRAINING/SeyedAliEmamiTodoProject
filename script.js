@@ -1,51 +1,43 @@
 let input = document.getElementById("input");
 let actions = ["Todo", "Doing", "Done"];
 let lastID = 0;
+const generateTaskId = (id) => `task${id}`;
+const getTaskById = (id) => document.getElementById(generateTaskId(id));
 
-function change(id, dest) {
-    let element = document.getElementById(`task${id}`);
-    document.getElementById(dest).append(element);
-}
-function remove(id) {
-    let element = document.getElementById(`task${id}`);
-    element.remove();
-}
-function createTask(title) {
-    let actionsBox = document.createElement("div");
+const remove = (id) => getTaskById(id).remove();
+const changeGroup = (id, dest) =>
+    document.getElementById(dest).append(getTaskById(id));
+
+const createTask = (title) => {
+    const id = lastID++;
+    const actionsBox = document.createElement("div");
     actionsBox.classList.add("action-box");
-    let id = lastID;
     actions.map((act) => {
-        let action = document.createElement("div");
+        const action = document.createElement("div");
         action.classList.add("box", "action");
         action.innerText = act;
-        action.addEventListener("click", function (e) {
-            change(id, act);
-        });
+        action.addEventListener("click", () => changeGroup(id, act));
         actionsBox.append(action);
     });
 
-    let action = document.createElement("div");
+    const action = document.createElement("div");
     action.classList.add("box", "action");
     action.innerText = "Remove";
-    action.addEventListener("click", function (e) {
-        remove(id);
-    });
-
+    action.addEventListener("click", () => remove(id));
     actionsBox.append(action);
 
-    let task = document.createElement("div");
+    const task = document.createElement("div");
     task.classList.add("box", "task");
-    task.id = `task${lastID}`;
-    let taskTitle = document.createElement("div");
+    task.id = generateTaskId(id);
+
+    const taskTitle = document.createElement("div");
     taskTitle.classList.add("task-title");
     taskTitle.innerText = title;
-    lastID++;
-    task.append(taskTitle);
-    task.append(actionsBox);
+    task.append(taskTitle, actionsBox);
     return task;
-}
-document.getElementById("add-todo").addEventListener("click", function (e) {
-    if (input.value.trim() == "") return;
+};
 
-    document.getElementById("Todo").append(createTask(input.value));
+document.getElementById("add-todo").addEventListener("click", () => {
+    if (input.value.trim() !== "")
+        document.getElementById("Todo").append(createTask(input.value));
 });
