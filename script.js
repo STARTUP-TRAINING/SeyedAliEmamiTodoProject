@@ -1,4 +1,5 @@
-let input = document.getElementById("input");
+const input = document.getElementById("input");
+const actionClasses = ["box", "action", "clickable"];
 let actions = ["Todo", "Doing", "Done"];
 let lastID = 0;
 const generateTaskId = (id) => `task${id}`;
@@ -14,14 +15,14 @@ const createTask = (title) => {
     actionsBox.classList.add("action-box");
     actions.map((act) => {
         const action = document.createElement("div");
-        action.classList.add("box", "action");
+        action.classList.add(...actionClasses);
         action.innerText = act;
         action.addEventListener("click", () => changeGroup(id, act));
         actionsBox.append(action);
     });
 
     const action = document.createElement("div");
-    action.classList.add("box", "action");
+    action.classList.add(...actionClasses);
     action.innerText = "Remove";
     action.addEventListener("click", () => remove(id));
     actionsBox.append(action);
