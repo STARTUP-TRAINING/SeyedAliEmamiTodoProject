@@ -1,0 +1,96 @@
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+}
+body {
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgb(66, 4, 56);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    color: white;
+    box-sizing: border-box;
+}
+
+.box {
+    background-color: rgba(220, 220, 220, 0.123);
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.123);
+}
+
+.input-container {
+    display: flex;
+    margin: 30px 0;
+}
+
+.add-label {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+}
+
+#input {
+    margin: 0;
+    background-color: transparent;
+    border: none;
+}
+
+.button {
+    border: none;
+    display: block;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0 30px;
+}
+
+.input-container {
+    display: grid;
+    grid-template-columns: 150px auto 100px;
+    grid-template-rows: 50px;
+}
+.cols-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 200px;
+    gap: 10px;
+}
+.col {
+    padding: 20px;
+}
+.task-cat {
+    display: grid;
+    grid-auto-rows: auto;
+    min-width: 0;
+    min-width: 0;
+    gap: 20px;
+}
+
+.task {
+    padding: 20px;
+}
+
+.action-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.action {
+    cursor: pointer;
+    display: inline-block;
+    padding: 2px 10px;
+    text-align: center;
+    border-radius: 30px;
+    font-size: 0.9em;
+}
+
+#add-col {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}

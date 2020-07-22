@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Todo</title>
+    </head>
+    <body>
+        <header>
+            <h1>Gholam Todo</h1>
+            <p>Best Todo App in The Universe and surrounding Areas</p>
+        </header>
+        <div class="box input-container">
+            <label for="input" class="add-label">Add Todo:</label>
+            <input type="text" id="input" />
+            <button class="button box" id="add-todo">Add</button>
+        </div>
+
+        <div class="cols-container">
+            <div>
+                <div class="box col">
+                    <h3>Todo</h3>
+                    <div id="Todo" class="task-cat"></div>
+                </div>
+            </div>
+
+            <div>
+                <div class="box col">
+                    <h3>Doing</h3>
+                    <div id="Doing" class="task-cat"></div>
+                </div>
+            </div>
+
+            <div>
+                <div class="box col" id="done">
+                    <h3>Done</h3>
+                    <div id="Done" class="task-cat"></div>
+                </div>
+            </div>
+            <div>
+                <div class="box col" id="add-col">
+                    <h1>+</h1>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
