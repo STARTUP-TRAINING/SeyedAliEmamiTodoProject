@@ -39,6 +39,8 @@ const createGroupColumn = (name) => {
 
 const addGroup = (name) => {
     if (actions.includes(name)) return alert("Duplicate name!");
+    if (name == null) return;
+    if (name.length == 0) return alert("Please Enter a name!");
     actions.push(name);
     colsContainer.insertBefore(createGroupColumn(name), addCol.parentElement);
     const actionBoxes = getAllActionBoxes();
