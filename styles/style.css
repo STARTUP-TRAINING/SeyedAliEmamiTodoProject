@@ -60,7 +60,7 @@ body {
 
 #cols-container {
     display: grid;
-    grid-auto-columns: 1fr 1fr 1fr 200px;
+    grid-auto-columns: auto;
     grid-auto-flow: column;
     gap: 10px;
 }
