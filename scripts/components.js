@@ -5,7 +5,7 @@ const Column = (name, children = "") =>
     </div>`;
 
 const Action = (taskId, srcColumn, destColumn) =>
-    `<div class="box action clickable" onclick="changeColumn(
+    `<div class="box action clickable" onclick="changeTaskColumn(
         ${taskId},
         '${srcColumn}',
         '${destColumn}'

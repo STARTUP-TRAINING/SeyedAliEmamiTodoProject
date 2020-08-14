@@ -1,16 +1,17 @@
 const addColumn = (name) => {
+    name = name.trim();
     if (
         Object.keys(state.cols).filter(
             (c) => c.toUpperCase() === name.toUpperCase()
         ).length
     )
         return alert("Duplicate name!\nPlease choose another name!");
-
+    if (name.length === 0) return alert("Empty name is not allowed");
     state.cols[name] = [];
     render();
 };
 
-const changeColumn = (taskId, srcColumn, destColumn) => {
+const changeTaskColumn = (taskId, srcColumn, destColumn) => {
     const task = state.cols[srcColumn].filter(({ id }) => id === taskId)[0];
     const otherTasks = state.cols[srcColumn].filter(({ id }) => id !== taskId);
     state.cols[srcColumn] = otherTasks;

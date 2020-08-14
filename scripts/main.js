@@ -1,7 +1,8 @@
 elements.addTaskForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const value = input.value.trim();
+    const value = elements.input.value.trim();
     if (!value.length) return;
+    elements.input.value = "";
     addTask(value);
 });
 
