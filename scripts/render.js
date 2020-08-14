@@ -23,6 +23,7 @@ const removeTask = (srcColumn, taskId) => {
     state.cols[srcColumn] = otherTasks;
     render();
 };
+
 const addTask = (title) => {
     console.log(title);
     state.cols.todo.push({ id: ++state.lastID, title });
