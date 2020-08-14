@@ -4,3 +4,8 @@ let state = {
         todo: [],
     },
 };
+
+setState = (newState) => {
+    state = { ...newState };
+    render();
+};

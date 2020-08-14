@@ -1,4 +1,4 @@
-const render = () => {
+function render() {
     elements.cols.innerHTML = "";
     let columns = Object.keys(state.cols);
 
@@ -9,4 +9,4 @@ const render = () => {
             .join("");
         elements.cols.innerHTML += Column(col, tasksHtml);
     });
-};
+}

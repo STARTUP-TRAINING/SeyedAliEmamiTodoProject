@@ -13,6 +13,7 @@ const addColumn = (name) => {
     )
         return alert("Duplicate name!\nPlease choose another name!");
     if (name.length === 0) return alert("Empty name is not allowed");
-    state.cols[name] = [];
-    render();
+    const newState = { ...state };
+    newState.cols[name] = [];
+    setState(newState);
 };

@@ -11,20 +11,27 @@ const Task = (title, id, column) =>
     </div>`;
 
 const addTask = (title) => {
-    state.cols.todo.push({ id: ++state.lastID, title });
-    render();
+    const newState = { ...state };
+    newState.cols.todo.push({ id: ++newState.lastID, title });
+    setState(newState);
 };
 
 const changeTaskColumn = (taskId, srcColumn, destColumn) => {
-    const task = state.cols[srcColumn].filter(({ id }) => id === taskId)[0];
-    const otherTasks = state.cols[srcColumn].filter(({ id }) => id !== taskId);
-    state.cols[srcColumn] = otherTasks;
-    state.cols[destColumn].push(task);
-    render();
+    const newState = { ...state };
+    const task = newState.cols[srcColumn].filter(({ id }) => id === taskId)[0];
+    const otherTasks = newState.cols[srcColumn].filter(
+        ({ id }) => id !== taskId
+    );
+    newState.cols[srcColumn] = otherTasks;
+    newState.cols[destColumn].push(task);
+    setState(newState);
 };
 
 const removeTask = (srcColumn, taskId) => {
-    const otherTasks = state.cols[srcColumn].filter(({ id }) => id !== taskId);
-    state.cols[srcColumn] = otherTasks;
-    render();
+    const newState = { ...state };
+    const otherTasks = newState.cols[srcColumn].filter(
+        ({ id }) => id !== taskId
+    );
+    newState.cols[srcColumn] = otherTasks;
+    setState(newState);
 };
