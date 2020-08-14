@@ -11,25 +11,24 @@
             <h1>Gholam Todo</h1>
             <p>Best Todo App in The Universe and surrounding Areas</p>
         </header>
-        <div class="box input-container">
+        <form class="box input-container" id="add-task-form">
             <label for="input" class="add-label">Add Todo:</label>
             <input type="text" id="input" />
             <button class="button box clickable" id="add-todo">Add</button>
-        </div>
+        </form>
 
         <div id="cols-container">
-            <div>
-                <div class="box col">
-                    <h3>Todo</h3>
-                    <div id="Todo" class="task-cat"></div>
-                </div>
-            </div>
+            <div id="cols"></div>
             <div>
                 <div class="box col clickable" id="add-col">
                     <h1>+</h1>
                 </div>
             </div>
         </div>
-        <script src="scripts/script.js"></script>
+        <!-- <script src="scripts/script.js"></script> -->
+        <script src="scripts/states.js"></script>
+        <script src="scripts/utilities.js"></script>
+        <script src="scripts/render.js"></script>
+        <script src="scripts/main.js"></script>
     </body>
 </html>

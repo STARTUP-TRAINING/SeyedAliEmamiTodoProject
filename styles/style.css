@@ -64,7 +64,12 @@ body {
     grid-auto-flow: column;
     gap: 10px;
 }
-
+#cols {
+    display: grid;
+    grid-auto-columns: auto;
+    grid-auto-flow: column;
+    gap: 10px;
+}
 .col {
     padding: 20px;
 }
